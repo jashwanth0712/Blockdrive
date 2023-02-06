@@ -35,6 +35,8 @@ if not os.path.exists(path):
 
 else:
     print("[ ] blockdrive folder already existing")
-subprocess.call(["python", "python_files/watcher.py"])
+subprocess.call(["python", "./register.py"])
+subprocess.call(["python", "./register1.py"])
+subprocess.call(["python", "../python_files/watcher.py"])
 
 
