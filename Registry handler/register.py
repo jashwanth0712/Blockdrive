@@ -25,4 +25,5 @@ def add_context_menu_entry():
         print("Error adding context menu entry:", e)
 
 if __name__ == "__main__":
+    print("installing reg1")
     add_context_menu_entry()

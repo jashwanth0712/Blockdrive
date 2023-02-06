@@ -6,7 +6,14 @@ import subprocess
 
 def next_func():
     print("Next button clicked")
-    subprocess.call(["python", "../setup.py"])
+   
+    subprocess.call(["python", "./Registry handler/register.py"])
+    subprocess.call(["python", "./Registry handler/register1.py"])
+    root.destroy()
+    subprocess.call(["python", "./toolchain.py"])
+   
+
+    
 
 def cancel_func():
     print("Cancel button clicked")
