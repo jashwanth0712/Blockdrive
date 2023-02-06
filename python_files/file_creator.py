@@ -27,7 +27,7 @@ def your_time_consuming_function():
 
 window = Tk()
 #Set title
-window.title ('Report Generator')
+window.title ('installing')
 # Set window size
 window.geometry("800x500")
 # add logo
