@@ -1,33 +1,18 @@
-import time
 import os
-import subprocess
-import logging
-from watchdog.observers import Observer
-from watchdog.events import LoggingEventHandler
+import time
+folder_name = "Blockdrive"
+drive = os.path.expanduser("~")  # uses the home directory of the current user
+folder_to_watch = os.path.join(drive, folder_name)
+before = dict ([(f, None) for f in os.listdir (folder_to_watch)])
 
-if __name__ == "__main__":
-    
-    try:
-        logging.basicConfig(level=logging.INFO,
-                            format='%(asctime)s - %(message)s',
-                            datefmt='%Y-%m-%d %H:%M:%S')
-        folder_name = "Blockdrive"
-        drive = os.path.expanduser("~")  # uses the home directory of the current user
-        path = os.path.join(drive, folder_name)
-        event_handler = LoggingEventHandler()
-        observer = Observer()
-        observer.schedule(event_handler, path, recursive=True)
-        print("[ ] observing ",path)
-        observer.start()
-        try:
-            while True:
-                time.sleep(1)
-        finally:
-            observer.stop()
-            observer.join()
-    except Exception:
-        print("[\033[31m*\033[0m] Exception occured, trying to run setup.py")
-        subprocess.call(["python", "./setup.py"])
+def Upload_file(file_name):
+  CID=""
+  return CID
 
-
-
+while 1:
+  time.sleep (1)
+  after = dict ([(f, None) for f in os.listdir (folder_to_watch)])
+  added = [f for f in after if not f in before]
+  if added:
+    print("Added: ", ", ".join (added))
+  before = after
